@@ -1,0 +1,8 @@
+#ignore
+venv
+phrasal_verbs.pdf
+test.db
+app/static/img/*.jpg
+
+#add
+!img/

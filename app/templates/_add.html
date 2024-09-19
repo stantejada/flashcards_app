@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="container-fluid mt-3">
+    <div class="card mb-4">
+        <div class="card-header">
+            <h1>{{ title }}</h1>
+        </div>
+        <div class="card-body">
+            <form method="POST" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                <div class="mb-3">
+                    {{ form.verb(class='form-control', placeholder='Phrasal Verb') }}
+                    {% for error in form.verb.errors %}
+                    <div class="text-danger">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="mb-3">
+                    {{ form.image_url(class='form-control') }}
+                    {% for error in form.image_url.errors %}
+                    <div class="text-danger">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="mb-3">
+                    {{ form.meaning(class='form-control', placeholder='Meaning') }}
+                    {% for error in form.meaning.errors %}
+                    <div class="text-danger">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="mb-3">
+                    {{ form.example1(class='form-control', placeholder='Example 1') }}
+                    {% for error in form.example1.errors %}
+                    <div class="text-danger">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="mb-3">
+                    {{ form.example2(class='form-control', placeholder='Example 2') }}
+                    {% for error in form.example2.errors %}
+                    <div class="text-danger">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="mb-3">
+                    {{ form.example3(class='form-control', placeholder='Example 3') }}
+                    {% for error in form.example3.errors %}
+                    <div class="text-danger">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="mb-3">
+                    {{ form.submit(class='btn btn-primary') }}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
